@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink, Calendar, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Github, ExternalLink, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import '../styles/Projects.css';
 

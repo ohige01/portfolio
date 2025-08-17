@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Calendar, MapPin, Heart } from 'lucide-react';
+import { User, MapPin, Heart } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import '../styles/About.css';
 
