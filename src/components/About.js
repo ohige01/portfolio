@@ -40,7 +40,7 @@ const About = () => {
               </div>
               <div className="info-text">
                 <h3>관심분야</h3>
-                <p>웹 개발, UI/UX 디자인</p>
+                <p>서버 아키텍처 설계, API 설계 및 제작</p>
               </div>
             </div>
           </div>
@@ -50,10 +50,10 @@ const About = () => {
             <p>{personalInfo.bio}</p>
             
             <div className="stats">
-              <div className="stat-item">
+              {/* <div className="stat-item">
                 <div className="stat-number">3+</div>
                 <div className="stat-label">년간 경험</div>
-              </div>
+              </div> */}
               <div className="stat-item">
                 <div className="stat-number">{personalInfo.projects.length}</div>
                 <div className="stat-label">완료된 프로젝트</div>
@@ -67,7 +67,6 @@ const About = () => {
             <div className="about-highlights">
               <h4>주요 특징</h4>
               <ul>
-                <li>사용자 중심의 인터페이스 설계</li>
                 <li>클린하고 유지보수 가능한 코드 작성</li>
                 <li>최신 웹 기술 트렌드 적극 도입</li>
                 <li>팀워크와 협업을 중시하는 개발 문화</li>
