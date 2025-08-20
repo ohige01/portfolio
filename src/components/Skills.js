@@ -68,16 +68,10 @@ const Skills = () => {
                     className="skill-card"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="skill-name">{skill.name}</div>
-                    <div className="skill-level">
-                      <div className="skill-bar">
-                        <div 
-                          className="skill-progress"
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                      <span className="skill-percentage">{skill.level}%</span>
+                    <div className="skill-logo">
+                      <img src={skill.logo} alt={skill.name} />
                     </div>
+                    <div className="skill-name">{skill.name}</div>
                   </div>
                 ))}
               </div>
