@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, MapPin, Heart } from 'lucide-react';
+import { Calendar, Target, BookOpen, ArrowRight } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import '../styles/About.css';
 
@@ -8,67 +8,63 @@ const About = () => {
     <section id="about" className="about section">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">저에 대해 더 자세히 알아보세요</p>
+          <h2 className="section-title">개발자로서의 여정</h2>
         </div>
         
-        <div className="about-content">
-          <div className="about-info">
-            <div className="info-card">
-              <div className="info-icon">
-                <User size={24} />
-              </div>
-              <div className="info-text">
-                <h3>이름</h3>
-                <p>{personalInfo.name}</p>
-              </div>
-            </div>
-            
-            <div className="info-card">
-              <div className="info-icon">
-                <MapPin size={24} />
-              </div>
-              <div className="info-text">
-                <h3>위치</h3>
-                <p>{personalInfo.location}</p>
-              </div>
-            </div>
-            
-            <div className="info-card">
-              <div className="info-icon">
-                <Heart size={24} />
-              </div>
-              <div className="info-text">
-                <h3>관심분야</h3>
-                <p>{personalInfo.about.interests}</p>
-              </div>
+        <div className="experience-content">
+          {/* 타임라인 섹션 */}
+          <div className="timeline-section">
+            <h3 className="section-subtitle">
+              <Calendar size={20} />
+              성장 타임라인
+            </h3>
+            <div className="timeline">
+              {personalInfo.experience.timeline.map((item, index) => (
+                <div key={index} className="timeline-item">
+                  <div className="timeline-dot"></div>
+                  <div className="timeline-content">
+                    <div className="timeline-period">{item.period}</div>
+                    <h4 className="timeline-title">{item.title}</h4>
+                    <p className="timeline-description">{item.description}</p>
+                    <div className="timeline-technologies">
+                      {item.technologies.map((tech, techIndex) => (
+                        <span key={techIndex} className="tech-badge">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-          
-          <div className="about-description">
-            <h3>소개</h3>
-            <p>{personalInfo.bio}</p>
-            
-            <div className="stats">
-              {/* <div className="stat-item">
-                <div className="stat-number">3+</div>
-                <div className="stat-label">년간 경험</div>
-              </div> */}
-              <div className="stat-item">
-                <div className="stat-number">{personalInfo.projects.length}</div>
-                <div className="stat-label">진행한 프로젝트</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">{Object.values(personalInfo.skills).flat().length}</div>
-                <div className="stat-label">사용 기술</div>
+
+          {/* 가치관과 목표 */}
+          <div className="values-goals">
+            <div className="values-section">
+              <h3 className="section-subtitle">
+                <BookOpen size={20} />
+                개발 가치관
+              </h3>
+              <div className="values-grid">
+                {personalInfo.experience.values.map((value, index) => (
+                  <div key={index} className="value-card">
+                    <h4>{value.title}</h4>
+                    <p>{value.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
-            
-            <div className="about-highlights">
-              <h4>주요 특징</h4>
-              <ul>
-                {personalInfo.about.highlights.map((highlight, index) => (
-                  <li key={index}>{highlight}</li>
+
+            <div className="goals-section">
+              <h3 className="section-subtitle">
+                <Target size={20} />
+                앞으로의 목표
+              </h3>
+              <ul className="goals-list">
+                {personalInfo.experience.goals.map((goal, index) => (
+                  <li key={index} className="goal-item">
+                    <ArrowRight size={16} />
+                    <span>{goal}</span>
+                  </li>
                 ))}
               </ul>
             </div>

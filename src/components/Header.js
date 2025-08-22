@@ -25,7 +25,7 @@ const Header = () => {
 
   const navItems = [
     { id: 'home', label: '홈' },
-    { id: 'about', label: '소개' },
+    { id: 'about', label: '여정' },
     { id: 'skills', label: '기술' },
     { id: 'projects', label: '프로젝트' },
     { id: 'contact', label: '연락처' }
