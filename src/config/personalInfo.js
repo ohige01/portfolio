@@ -8,6 +8,15 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/yourusername",
   bio: "범용성 높은 개발자가 되기 위해 노력하는 백엔드 개발자입니다. 새로운 환경이나 문화에 유연하게 적응하며, 낯선 도전을 극복하고 숙력될 때 보람을 느낍니다.",
   
+  about: {
+    interests: "서버 아키텍처 설계, API 설계 및 제작",
+    highlights: [
+      "클린하고 유지보수 가능한 코드 작성",
+      "최신 웹 기술 트렌드 적극 도입",
+      "팀워크와 협업을 중시하는 개발 문화"
+    ]
+  },
+  
   skills: {
     frontend: [
       { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
