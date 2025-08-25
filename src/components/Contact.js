@@ -132,7 +132,7 @@ const Contact = () => {
           </div>
           
           <div className="contact-form-container">
-            <h3>메시지 보내기</h3>
+            <h3>메시지 보내기 (구현중)</h3>
             <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">이름</label>

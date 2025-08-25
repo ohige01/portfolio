@@ -6,19 +6,12 @@ import '../styles/Projects.css';
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('overview');
 
   const openModal = (project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
-    setActiveTab('overview'); // 모달 열 때마다 첫 번째 탭으로 리셋
   };
 
-  const tabs = [
-    { id: 'overview', label: '개요', icon: CheckCircle },
-    { id: 'challenges', label: '도전과 해결', icon: AlertTriangle },
-    { id: 'reflection', label: '소감', icon: Heart }
-  ];
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -172,85 +165,86 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* 탭 네비게이션 */}
-                <div className="tab-navigation">
-                  {tabs.map((tab) => {
-                    const IconComponent = tab.icon;
-                    return (
-                      <button
-                        key={tab.id}
-                        className={`tab-button ${activeTab === tab.id ? 'active' : ''}`}
-                        onClick={() => setActiveTab(tab.id)}
-                      >
-                        <IconComponent size={18} />
-                        {tab.label}
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* 탭 컨텐츠 */}
-                <div className="tab-content">
-                  {activeTab === 'overview' && (
-                    <div className="tab-panel">
-                      <div className="content-section">
-                        <h4>프로젝트 개요</h4>
-                        <p className="overview-text">{selectedProject.details.overview}</p>
-                      </div>
-
-                      <div className="content-section">
-                        <h4>주요 기능</h4>
-                        <div className="feature-grid">
-                          {selectedProject.details.features.map((feature, index) => (
-                            <div key={index} className="feature-item">
-                              <CheckCircle size={16} />
-                              <span>{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
+                {/* 스크롤 가능한 콘텐츠 영역 */}
+                <div className="modal-scroll-content">
+                  {/* 프로젝트 개요 섹션 */}
+                  <div className="content-section overview-section">
+                    <div className="section-header">
+                      <CheckCircle className="section-icon" />
+                      <h4>프로젝트 개요</h4>
                     </div>
-                  )}
+                    <p className="overview-text">{selectedProject.details.overview}</p>
+                  </div>
 
-                  {activeTab === 'challenges' && (
-                    <div className="tab-panel">
-                      <div className="content-section">
-                        <h4>어려웠던 점</h4>
-                        <div className="challenge-grid">
+                  {/* 주요 기능 섹션 */}
+                  <div className="content-section features-section">
+                    <div className="section-header">
+                      <CheckCircle className="section-icon" />
+                      <h4>주요 기능</h4>
+                    </div>
+                    <div className="feature-grid">
+                      {selectedProject.details.features.map((feature, index) => (
+                        <div key={index} className="feature-item">
+                          <CheckCircle size={16} />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 도전과 해결 섹션 */}
+                  <div className="content-section challenges-section">
+                    <div className="section-header">
+                      <AlertTriangle className="section-icon" />
+                      <h4>도전과 해결</h4>
+                    </div>
+                    <div className="challenges-solutions-grid">
+                      <div className="challenges-column">
+                        <div className="column-header">
+                          <AlertTriangle size={18} />
+                          <h5>어려웠던 점</h5>
+                        </div>
+                        <div className="challenge-list">
                           {selectedProject.details.challenges.map((challenge, index) => (
                             <div key={index} className="challenge-item">
-                              <AlertTriangle size={16} />
+                              <div className="item-number">{index + 1}</div>
                               <span>{challenge}</span>
                             </div>
                           ))}
                         </div>
                       </div>
-
-                      <div className="content-section">
-                        <h4>개선한 점</h4>
-                        <div className="improvement-grid">
+                      <div className="solutions-column">
+                        <div className="column-header">
+                          <TrendingUp size={18} />
+                          <h5>해결한 방법</h5>
+                        </div>
+                        <div className="improvement-list">
                           {selectedProject.details.improvements.map((improvement, index) => (
                             <div key={index} className="improvement-item">
-                              <TrendingUp size={16} />
+                              <div className="item-number">{index + 1}</div>
                               <span>{improvement}</span>
                             </div>
                           ))}
                         </div>
                       </div>
                     </div>
-                  )}
+                  </div>
 
-                  {activeTab === 'reflection' && (
-                    <div className="tab-panel">
-                      <div className="content-section">
-                        <h4>프로젝트 소감</h4>
-                        <div className="reflection-content">
-                          <Heart size={24} />
-                          <p>{selectedProject.details.reflection}</p>
-                        </div>
+                  {/* 프로젝트 소감 섹션 */}
+                  <div className="content-section reflection-section">
+                    <div className="section-header">
+                      <Heart className="section-icon" />
+                      <h4>프로젝트 소감</h4>
+                    </div>
+                    <div className="reflection-quote">
+                      <div className="quote-icon">
+                        <Heart size={24} />
+                      </div>
+                      <div className="quote-content">
+                        <blockquote>"{selectedProject.details.reflection}"</blockquote>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
             )}
