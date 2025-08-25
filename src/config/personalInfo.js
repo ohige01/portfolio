@@ -106,7 +106,7 @@ export const personalInfo = {
       },
       github: "https://github.com/ohige01/popfri",
       demo: "https://popfri-demo.com",
-      image: "/images/project1.jpg"
+      image: "/images/popfri.png"
     },
     {
       id: 2,
@@ -137,7 +137,7 @@ export const personalInfo = {
       },
       github: "https://github.com/ohige01/eat-this",
       demo: "https://eat-this-demo.com",
-      image: "/images/project2.jpg"
+      image: "/images/eatthis.png"
     },
     {
       id: 3,
@@ -168,7 +168,7 @@ export const personalInfo = {
       },
       github: "https://github.com/ohige01/cardify",
       demo: "https://cardify-demo.com",
-      image: "/images/project3.jpg"
+      image: "/images/cardify.png"
     }
   ]
 };

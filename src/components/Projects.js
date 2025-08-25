@@ -60,11 +60,14 @@ const Projects = () => {
                 onClick={() => openModal(project)}
               >
                 <div className="card-image">
-                  <div className="card-placeholder">
-                    <div className="card-number">#{project.id}</div>
-                    <div className="card-overlay">
-                      <span className="view-details">자세히 보기</span>
-                    </div>
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="card-image-img"
+                  />
+                  <div className="card-number">#{project.id}</div>
+                  <div className="card-overlay">
+                    <span className="view-details">자세히 보기</span>
                   </div>
                 </div>
                 
@@ -87,7 +90,6 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* 모달 */}
       {isModalOpen && (
         <div className={`modal-overlay ${isModalOpen ? 'active' : ''}`} onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -97,21 +99,18 @@ const Projects = () => {
             
             {selectedProject && (
               <div className="modal-body">
-                {/* 프로젝트 헤더 */}
                 <div className="modal-header">
                   <div className="project-image">
-                    <div className="image-placeholder">
+                    <div className="project-image-container">
+                      <img 
+                        src={selectedProject.image} 
+                        alt={selectedProject.title}
+                        className="project-image-img"
+                      />
                       <div className="project-number">#{selectedProject.id}</div>
-                      <div className="project-preview">
-                        <div className="preview-header">
-                          <div className="preview-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                          </div>
-                        </div>
-                        <div className="preview-content">
-                          <div className="preview-text">{selectedProject.title}</div>
+                      <div className="image-overlay">
+                        <div className="overlay-content">
+                          <h5>{selectedProject.title}</h5>
                         </div>
                       </div>
                     </div>
@@ -165,9 +164,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* 스크롤 가능한 콘텐츠 영역 */}
                 <div className="modal-scroll-content">
-                  {/* 프로젝트 개요 섹션 */}
                   <div className="content-section overview-section">
                     <div className="section-header">
                       <CheckCircle className="section-icon" />
@@ -176,7 +173,6 @@ const Projects = () => {
                     <p className="overview-text">{selectedProject.details.overview}</p>
                   </div>
 
-                  {/* 주요 기능 섹션 */}
                   <div className="content-section features-section">
                     <div className="section-header">
                       <CheckCircle className="section-icon" />
@@ -192,7 +188,6 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* 도전과 해결 섹션 */}
                   <div className="content-section challenges-section">
                     <div className="section-header">
                       <AlertTriangle className="section-icon" />
@@ -230,7 +225,6 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* 프로젝트 소감 섹션 */}
                   <div className="content-section reflection-section">
                     <div className="section-header">
                       <Heart className="section-icon" />

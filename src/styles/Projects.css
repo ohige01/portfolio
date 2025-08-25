@@ -440,16 +440,50 @@
   margin-top: var(--spacing-md);
 }
 
-.image-placeholder {
+.project-image-container {
   aspect-ratio: 16/10;
-  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
-  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
   border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.project-image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-medium);
+}
+
+.project-image-container:hover .project-image-img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+  opacity: 0;
+  transition: var(--transition-medium);
+}
+
+.project-image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-content h5 {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .project-number {
@@ -587,16 +621,18 @@
 .card-image {
   position: relative;
   height: 200px;
+  overflow: hidden;
 }
 
-.card-placeholder {
+.card-image-img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  object-fit: cover;
+  transition: var(--transition-medium);
+}
+
+.project-card:hover .card-image-img {
+  transform: scale(1.1);
 }
 
 .card-overlay {
