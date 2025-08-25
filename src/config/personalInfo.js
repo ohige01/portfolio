@@ -105,7 +105,8 @@ export const personalInfo = {
         reflection: "처음으로 메시지 큐를 도입한 프로젝트였는데, 실시간 데이터 처리의 중요성과 시스템 아키텍처 설계의 복잡함을 깊이 이해할 수 있었습니다. 특히 Kafka를 활용한 이벤트 스트리밍을 통해 확장 가능한 시스템을 구축하는 경험을 쌓았습니다."
       },
       github: "https://github.com/ohige01/popfri",
-      demo: "https://popfri-demo.com",
+      demo: null,
+      youtube: "https://youtu.be/N0tc_PW0Ng8",
       image: "/images/popfri.png"
     },
     {
@@ -136,7 +137,8 @@ export const personalInfo = {
         reflection: "AI API를 실제 서비스에 통합하는 첫 경험이었습니다. 외부 API 의존성 관리와 비용 최적화의 중요성을 배웠고, 사용자 중심의 서비스 설계에 대해 많이 고민하게 된 프로젝트였습니다."
       },
       github: "https://github.com/ohige01/eat-this",
-      demo: "https://eat-this-demo.com",
+      demo: null,
+      youtube: "https://youtu.be/MCwqymBcdvs",
       image: "/images/eatthis.png"
     },
     {
@@ -167,7 +169,8 @@ export const personalInfo = {
         reflection: "학습 도메인에 대한 깊은 이해가 필요한 프로젝트였습니다. 사용자의 학습 패턴을 데이터로 분석하고, 이를 바탕으로 개인화된 학습 경험을 제공하는 과정에서 도메인 지식의 중요성을 깨달았습니다."
       },
       github: "https://github.com/ohige01/cardify",
-      demo: "https://cardify-demo.com",
+      demo: null,
+      youtube: null,
       image: "/images/cardify.png"
     }
   ]

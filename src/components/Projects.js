@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink, Tag, X, Calendar, User, CheckCircle, AlertTriangle, TrendingUp, Heart } from 'lucide-react';
+import { Github, ExternalLink, Tag, X, Calendar, User, CheckCircle, AlertTriangle, TrendingUp, Heart, Play } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import '../styles/Projects.css';
 
@@ -108,11 +108,6 @@ const Projects = () => {
                         className="project-image-img"
                       />
                       <div className="project-number">#{selectedProject.id}</div>
-                      <div className="image-overlay">
-                        <div className="overlay-content">
-                          <h5>{selectedProject.title}</h5>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   
@@ -151,15 +146,27 @@ const Projects = () => {
                         <Github size={18} />
                         GitHub
                       </a>
-                      <a 
-                        href={selectedProject.demo} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="btn btn-primary"
-                      >
-                        <ExternalLink size={18} />
-                        Live Demo
-                      </a>
+                      {selectedProject.youtube ? (
+                        <a 
+                          href={selectedProject.youtube} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="btn btn-primary"
+                        >
+                          <Play size={18} />
+                          Play Video
+                        </a>
+                      ) : selectedProject.demo ? (
+                        <a 
+                          href={selectedProject.demo} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="btn btn-primary"
+                        >
+                          <ExternalLink size={18} />
+                          Live Demo
+                        </a>
+                      ) : null}
                     </div>
                   </div>
                 </div>
