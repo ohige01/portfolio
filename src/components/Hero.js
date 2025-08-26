@@ -11,7 +11,7 @@ const Hero = () => {
   }, []);
 
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
+    const aboutSection = document.getElementById('skills');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
     }

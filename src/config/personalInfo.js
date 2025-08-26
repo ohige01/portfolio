@@ -11,22 +11,22 @@ export const personalInfo = {
   experience: {
     timeline: [
       {
-        period: "2023 - 현재",
-        title: "백엔드 개발 집중 학습",
-        description: "Spring Boot와 Java를 중심으로 한 백엔드 개발 역량 강화",
-        technologies: ["Spring Boot", "Java", "MySQL", "Kafka"]
+        period: "2025.04 - 2025.06",
+        title: "PopFri - 나만의 팝콘 친구",
+        description: "AI 기반 사용자 맞춤 영화 추천 서비스 개발",
+        technologies: ["Spring Boot", "React", "MySQL", "Kafka", "Fluentd"]
       },
       {
-        period: "2022 - 2023",
-        title: "풀스택 개발 경험",
-        description: "프론트엔드와 백엔드를 아우르는 웹 개발 전반에 대한 이해",
-        technologies: ["React", "Node.js", "TypeScript", "AWS"]
+        period: "2024.12 - 2025.02",
+        title: "이거먹자 - 건강한 삶을 위한 맞춤형 솔루션",
+        description: "AI 기반 사용자 맞춤 식단 제공 서비스 개발",
+        technologies: ["Node.js", "MySQL", "DALL-E 3", "Naver API", "AWS"]
       },
       {
-        period: "2021 - 2022",
-        title: "개발 입문",
-        description: "프로그래밍 기초와 웹 개발의 기본 개념 학습",
-        technologies: ["HTML", "CSS", "JavaScript", "Git"]
+        period: "2024.07 - 2024.08",
+        title: "Cardify - 지능적인 플래시 카드 학습 서비스",
+        description: "플래시 카드 학습 기반 노트 에디터 개발",
+        technologies: ["Spring Boot", "MySQL", "Java", "JPA"]
       }
     ],
     values: [
@@ -82,7 +82,7 @@ export const personalInfo = {
       id: 1,
       title: "PopFri - 나만의 팝콘 친구",
       description: "AI 기반 사용자 맞춤 영화 추천 서비스",
-      period: "2023.09 - 2023.12 (4개월)",
+      period: "2025.04 - 2025.06",
       role: "백엔드 개발 및 시스템 아키텍처 설계",
       technologies: ["Spring Boot", "React", "MySQL", "Kafka", "Fluentd", "Figma"],
       details: {
@@ -114,7 +114,7 @@ export const personalInfo = {
       id: 2,
       title: "이거먹자 - 건강한 삶을 위한 맞춤형 솔루션",
       description: "AI 기반 사용자 맞춤 식단 제공 서비스",
-      period: "2023.06 - 2023.08 (3개월)",
+      period: "2024.12 - 2025.02",
       role: "풀스택 개발 및 AI 모델 통합",
       technologies: ["Node.js", "MySQL", "DALL-E 3", "Naver API", "AWS"],
       details: {
@@ -146,7 +146,7 @@ export const personalInfo = {
       id: 3,
       title: "Cardify - 지능적인 플래시 카드 학습 서비스",
       description: "플래시 카드 학습 기반 노트 에디터",
-      period: "2023.03 - 2023.05 (3개월)",
+      period: "2024.07 - 2024.08",
       role: "백엔드 개발 및 데이터베이스 설계",
       technologies: ["Spring Boot", "MySQL", "Java", "JPA"],
       details: {
