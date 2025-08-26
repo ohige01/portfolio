@@ -109,33 +109,6 @@ const Projects = () => {
                       />
                       <div className="project-number">#{selectedProject.id}</div>
                     </div>
-                  </div>
-                  
-                  <div className="project-info">
-                    <h3 className="project-title">{selectedProject.title}</h3>
-                    <p className="project-description">{selectedProject.description}</p>
-                    <div className="project-meta">
-                      <div className="meta-item">
-                        <Calendar size={16} />
-                        <span>{selectedProject.period}</span>
-                      </div>
-                      <div className="meta-item">
-                        <User size={16} />
-                        <span>{selectedProject.role}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="project-tech">
-                      <div className="tech-list">
-                        {selectedProject.technologies.map((tech) => (
-                          <span key={tech} className="tech-tag">
-                            <Tag size={14} />
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
                     <div className="project-links">
                       <a 
                         href={selectedProject.github} 
@@ -167,6 +140,32 @@ const Projects = () => {
                           Live Demo
                         </a>
                       ) : null}
+                    </div>
+                  </div>
+                  
+                  <div className="project-info">
+                    <h3 className="project-title">{selectedProject.title}</h3>
+                    <p className="project-description">{selectedProject.description}</p>
+                    <div className="project-meta">
+                      <div className="meta-item">
+                        <Calendar size={16} />
+                        <span>{selectedProject.period}</span>
+                      </div>
+                      <div className="meta-item">
+                        <User size={16} />
+                        <span>{selectedProject.role}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="project-tech">
+                      <div className="tech-list">
+                        {selectedProject.technologies.map((tech) => (
+                          <span key={tech} className="tech-tag">
+                            <Tag size={14} />
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
