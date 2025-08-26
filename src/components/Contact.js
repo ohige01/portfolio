@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import '../styles/Contact.css';
 
@@ -71,11 +71,6 @@ const Contact = () => {
       icon: <Github size={24} />,
       title: 'GitHub',
       link: personalInfo.github
-    },
-    {
-      icon: <Linkedin size={24} />,
-      title: 'LinkedIn',
-      link: personalInfo.linkedin
     }
   ];
 

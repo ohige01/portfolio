@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Heart, Github, Mail, ArrowUp } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import '../styles/Footer.css';
 
@@ -24,15 +24,6 @@ const Footer = () => {
                 aria-label="GitHub에서 프로젝트 보기"
               >
                 <Github size={20} />
-              </a>
-              <a 
-                href={personalInfo.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link"
-                aria-label="LinkedIn 프로필 보기"
-              >
-                <Linkedin size={20} />
               </a>
               <a 
                 href={`mailto:${personalInfo.email}`}

@@ -5,7 +5,6 @@ export const personalInfo = {
   phone: "(+82) 010-5034-8988",
   location: "서울, 대한민국",
   github: "https://github.com/ohige01",
-  linkedin: "https://linkedin.com/in/yourusername",
   bio: "범용성 높은 개발자가 되기 위해 노력하는 백엔드 개발자입니다. 새로운 환경이나 문화에 유연하게 적응하며, 낯선 도전을 극복하고 숙력될 때 보람을 느낍니다.",
   
   experience: {

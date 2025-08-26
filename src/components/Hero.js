@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Github, Linkedin, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { Github, Mail, MapPin, ChevronDown } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import '../styles/Hero.css';
 
@@ -43,10 +43,6 @@ const Hero = () => {
             <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="btn">
               <Github size={18} />
               GitHub
-            </a>
-            <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="btn">
-              <Linkedin size={18} />
-              LinkedIn
             </a>
             <button onClick={scrollToAbout} className="btn btn-primary">
               더 알아보기
