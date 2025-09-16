@@ -601,6 +601,7 @@
   color: var(--text-secondary);
   line-height: 1.7;
   font-size: var(--font-size-base);
+  white-space: pre-wrap;
 }
 
 .feature-grid {
@@ -707,6 +708,14 @@
   line-height: 1.7;
   font-size: var(--font-size-lg);
   position: relative;
+}
+
+.quote-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: var(--font-size-base);
+  white-space: pre-wrap;
 }
 
 .quote-content blockquote::before,
