@@ -239,6 +239,20 @@ const About = () => {
                     </div>
                   </div>
 
+                  <div className="content-section parts-section">
+                    <div className="section-header">
+                      <BookOpen className="section-icon" />
+                      <h4>제작파트</h4>
+                    </div>
+                    <div className="parts-grid">
+                      {selectedProject.details.parts.map((part, index) => (
+                        <div key={index} className="part-item">
+                          <span>{part}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
                   <div className="content-section challenges-section">
                     <div className="section-header">
                       <AlertTriangle className="section-icon" />
