@@ -244,10 +244,19 @@ const About = () => {
                       <BookOpen className="section-icon" />
                       <h4>제작파트</h4>
                     </div>
-                    <div className="parts-grid">
-                      {selectedProject.details.parts.map((part, index) => (
-                        <div key={index} className="part-item">
-                          <span>{part}</span>
+                    <div className="parts-categories">
+                      {selectedProject.details.parts.map((category, index) => (
+                        <div key={index} className="parts-category">
+                          <div className="category-header">
+                            <h5 className="category-title">{category.category}</h5>
+                          </div>
+                          <div className="category-items">
+                            {category.items.map((item, itemIndex) => (
+                              <div key={itemIndex} className="part-item">
+                                <span>{item}</span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
                       ))}
                     </div>

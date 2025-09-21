@@ -627,9 +627,35 @@
 }
 
 /* Parts Section */
-.parts-grid {
+.parts-categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.parts-category {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.category-header {
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+.category-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin: 0;
+}
+
+.category-items {
   display: grid;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
 }
 
 .part-item {
@@ -638,6 +664,7 @@
   gap: var(--spacing-sm);
   color: var(--text-secondary);
   line-height: 1.6;
+  padding-left: var(--spacing-sm);
 }
 
 .part-item::before {
