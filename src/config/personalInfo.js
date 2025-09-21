@@ -125,7 +125,33 @@ export const personalInfo = {
       github: "https://github.com/ohige01/popfri",
       demo: null,
       youtube: "https://youtu.be/N0tc_PW0Ng8",
-      image: "/images/popfri.png"
+      image: "/images/popfri.png",
+      gallery: [
+        {
+          id: 1,
+          image: "/images/popfri.png",
+          title: "썸네일",
+          description: "사용자 맞춤 영화 추천 서비스의 메인 화면"
+        },
+        {
+          id: 2,
+          image: "/images/popfri-wireframe.png",
+          title: "와이어프레임",
+          description: "피그마로 제작한 popfri 와이어프레임"
+        },
+        {
+          id: 3,
+          image: "/images/popfri-recommend.png",
+          title: "추천 시스템",
+          description: "AI 기반 개인화 추천 알고리즘 화면"
+        },
+        {
+          id: 4,
+          image: "/images/popfri-analytics.png",
+          title: "로그 분석",
+          description: "Kafka와 Fluentd를 활용한 실시간 로그 분석 대시보드"
+        }
+      ]
     },
     {
       id: 2,
@@ -175,7 +201,33 @@ export const personalInfo = {
       github: "https://github.com/ohige01/eat-this",
       demo: null,
       youtube: "https://youtu.be/MCwqymBcdvs",
-      image: "/images/eatthis.png"
+      image: "/images/eatthis.png",
+      gallery: [
+        {
+          id: 1,
+          image: "/images/eatthis.png",
+          title: "메인 대시보드",
+          description: "개인 맞춤형 식단 추천 서비스의 메인 화면"
+        },
+        {
+          id: 2,
+          image: "/images/eatthis-menu.png",
+          title: "식단 추천",
+          description: "AI 기반 사용자 맞춤 식단 추천 화면"
+        },
+        {
+          id: 3,
+          image: "/images/eatthis-nutrition.png",
+          title: "영양소 분석",
+          description: "식단별 영양소 분석 및 칼로리 계산 화면"
+        },
+        {
+          id: 4,
+          image: "/images/eatthis-ai.png",
+          title: "AI 이미지 생성",
+          description: "DALL-E 3를 활용한 음식 이미지 생성 결과"
+        }
+      ]
     },
     {
       id: 3,
@@ -221,7 +273,33 @@ export const personalInfo = {
       github: "https://github.com/ohige01/cardify",
       demo: null,
       youtube: null,
-      image: "/images/cardify.png"
+      image: "/images/cardify.png",
+      gallery: [
+        {
+          id: 1,
+          image: "/images/cardify.png",
+          title: "메인 화면",
+          description: "플래시 카드 학습 시스템의 메인 대시보드"
+        },
+        {
+          id: 2,
+          image: "/images/cardify-editor.png",
+          title: "카드 에디터",
+          description: "드래그 앤 드롭 기반 플래시 카드 편집 화면"
+        },
+        {
+          id: 3,
+          image: "/images/cardify-study.png",
+          title: "학습 모드",
+          description: "간격 반복 알고리즘이 적용된 학습 화면"
+        },
+        {
+          id: 4,
+          image: "/images/cardify-stats.png",
+          title: "학습 통계",
+          description: "개인 학습 패턴 분석 및 진도 추적 화면"
+        }
+      ]
     }
   ]
 };

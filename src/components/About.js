@@ -6,6 +6,8 @@ import '../styles/About.css';
 const About = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
 
   // Find matching project data for timeline item
   const findProjectById = (timelineItem) => {
@@ -18,31 +20,52 @@ const About = () => {
     const project = findProjectById(timelineItem);
     if (project) {
       setSelectedProject(project);
+      setSelectedImageIndex(0); // Reset to first image
       setIsModalOpen(true);
     }
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setTimeout(() => setSelectedProject(null), 300);
+    setIsImageModalOpen(false);
+    setTimeout(() => {
+      setSelectedProject(null);
+      setSelectedImageIndex(0);
+    }, 300);
+  };
+
+  const openImageModal = () => {
+    setIsImageModalOpen(true);
+  };
+
+  const closeImageModal = () => {
+    setIsImageModalOpen(false);
+  };
+
+  const selectImage = (index) => {
+    setSelectedImageIndex(index);
   };
 
   // ESC key to close modal
   useEffect(() => {
     const handleEsc = (event) => {
       if (event.keyCode === 27) {
-        closeModal();
+        if (isImageModalOpen) {
+          closeImageModal();
+        } else if (isModalOpen) {
+          closeModal();
+        }
       }
     };
     document.addEventListener('keydown', handleEsc);
     return () => {
       document.removeEventListener('keydown', handleEsc);
     };
-  }, []);
+  }, [isModalOpen, isImageModalOpen]);
 
   // Prevent scroll when modal is open
   useEffect(() => {
-    if (isModalOpen) {
+    if (isModalOpen || isImageModalOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -50,7 +73,7 @@ const About = () => {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, isImageModalOpen]);
 
   return (
     <section id="about" className="about section">
@@ -146,72 +169,112 @@ const About = () => {
             {selectedProject && (
               <div className="modal-body">
                 <div className="modal-header">
-                  <div className="project-image">
-                    <div className="project-image-container">
-                      <img 
-                        src={selectedProject.image} 
-                        alt={selectedProject.title}
-                        className="project-image-img"
-                      />
-                      <div className="project-number">#{selectedProject.id}</div>
+                  <div className="project-visual-section">
+                    {/* 메인 이미지 영역 */}
+                    <div className="project-main-image">
+                      <div className="project-image-container">
+                        <img
+                          src={selectedProject.gallery && selectedProject.gallery[selectedImageIndex]
+                            ? selectedProject.gallery[selectedImageIndex].image
+                            : selectedProject.image}
+                          alt={selectedProject.gallery && selectedProject.gallery[selectedImageIndex]
+                            ? selectedProject.gallery[selectedImageIndex].title
+                            : selectedProject.title}
+                          className="project-image-img clickable-image"
+                          onClick={openImageModal}
+                        />
+                        <div className="project-number">#{selectedProject.id}</div>
+                        <div className="image-expand-hint">
+                          <Eye size={16} />
+                          클릭하여 확대보기
+                        </div>
+                      </div>
                     </div>
+
+                    {/* 갤러리 미리보기 영역 */}
+                    {selectedProject.gallery && selectedProject.gallery.length > 1 && (
+                      <div className="gallery-thumbnails">
+                        {selectedProject.gallery.map((galleryItem, index) => (
+                          <div
+                            key={galleryItem.id}
+                            className={`thumbnail ${index === selectedImageIndex ? 'active' : ''}`}
+                            onClick={() => selectImage(index)}
+                          >
+                            <img
+                              src={galleryItem.image}
+                              alt={galleryItem.title}
+                              className="thumbnail-img"
+                              onError={(e) => {
+                                e.target.style.display = 'none';
+                              }}
+                            />
+                            <div className="thumbnail-title">{galleryItem.title}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* 프로젝트 정보 영역 */}
+                  <div className="project-content-section">
+                    <div className="project-basic-info">
+                      <h3 className="project-title">{selectedProject.title}</h3>
+                      <p className="project-description">{selectedProject.description}</p>
+                      <div className="project-meta">
+                        <div className="meta-item">
+                          <Calendar size={16} />
+                          <span>{selectedProject.period}</span>
+                        </div>
+                        <div className="meta-item">
+                          <User size={16} />
+                          <span>{selectedProject.role}</span>
+                        </div>
+                      </div>
+
+                      <div className="project-tech">
+                        <div className="tech-list">
+                          {selectedProject.technologies.map((tech) => (
+                            <span key={tech} className="tech-tag">
+                              <Tag size={14} />
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 프로젝트 액션 영역 */}
                     <div className="project-links">
-                      <a 
-                        href={selectedProject.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        href={selectedProject.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn"
                       >
                         <Github size={18} />
                         GitHub
                       </a>
                       {selectedProject.youtube ? (
-                        <a 
-                          href={selectedProject.youtube} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href={selectedProject.youtube}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="btn btn-primary"
                         >
                           <Play size={18} />
                           Play Video
                         </a>
                       ) : selectedProject.demo ? (
-                        <a 
-                          href={selectedProject.demo} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
+                        <a
+                          href={selectedProject.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="btn btn-primary"
                         >
                           <ExternalLink size={18} />
                           Live Demo
                         </a>
                       ) : null}
-                    </div>
-                  </div>
-                  
-                  <div className="project-info">
-                    <h3 className="project-title">{selectedProject.title}</h3>
-                    <p className="project-description">{selectedProject.description}</p>
-                    <div className="project-meta">
-                      <div className="meta-item">
-                        <Calendar size={16} />
-                        <span>{selectedProject.period}</span>
-                      </div>
-                      <div className="meta-item">
-                        <User size={16} />
-                        <span>{selectedProject.role}</span>
-                      </div>
-                    </div>
-                    
-                    <div className="project-tech">
-                      <div className="tech-list">
-                        {selectedProject.technologies.map((tech) => (
-                          <span key={tech} className="tech-tag">
-                            <Tag size={14} />
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -310,12 +373,45 @@ const About = () => {
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
             )}
           </div>
         </div>
       )}
+
+      {/* Image Expand Modal */}
+      {isImageModalOpen && selectedProject && (
+        <div className={`image-modal-overlay ${isImageModalOpen ? 'active' : ''}`} onClick={closeImageModal}>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="image-modal-close" onClick={closeImageModal}>
+              <X size={24} />
+            </button>
+            <div className="image-modal-body">
+              <img
+                src={selectedProject.gallery && selectedProject.gallery[selectedImageIndex]
+                  ? selectedProject.gallery[selectedImageIndex].image
+                  : selectedProject.image}
+                alt={selectedProject.gallery && selectedProject.gallery[selectedImageIndex]
+                  ? selectedProject.gallery[selectedImageIndex].title
+                  : selectedProject.title}
+                className="expanded-image"
+                onError={(e) => {
+                  e.target.src = selectedProject.image;
+                }}
+              />
+              {selectedProject.gallery && selectedProject.gallery[selectedImageIndex] && (
+                <div className="image-info">
+                  <h4 className="image-title">{selectedProject.gallery[selectedImageIndex].title}</h4>
+                  <p className="image-description">{selectedProject.gallery[selectedImageIndex].description}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 };
