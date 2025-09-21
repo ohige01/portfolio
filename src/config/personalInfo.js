@@ -6,6 +6,7 @@ export const personalInfo = {
   location: "서울, 대한민국",
   github: "https://github.com/ohige01",
   bio: "범용성 높은 개발자가 되기 위해 노력하는 백엔드 개발자입니다. 새로운 환경이나 문화에 유연하게 적응하며, 낯선 도전을 극복하고 숙력될 때 보람을 느낍니다.",
+  profileImage: "/images/profile.jpg", // 프로필 이미지 경로 추가
   
   experience: {
     timeline: [

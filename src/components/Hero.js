@@ -53,14 +53,20 @@ const Hero = () => {
         <div className={`hero-visual ${isVisible ? 'fade-in-up' : ''}`}>
           <div className="avatar-container">
             <div className="avatar">
-              <div className="avatar-placeholder">
+              {personalInfo.profileImage ? (
+                <img
+                  src={personalInfo.profileImage}
+                  alt={personalInfo.name}
+                  className="avatar-image"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+              ) : null}
+              <div className="avatar-placeholder" style={{ display: personalInfo.profileImage ? 'none' : 'flex' }}>
                 {personalInfo.name.charAt(0)}
               </div>
-            </div>
-            <div className="floating-elements">
-              <div className="floating-element element-1"></div>
-              <div className="floating-element element-2"></div>
-              <div className="floating-element element-3"></div>
             </div>
           </div>
         </div>
