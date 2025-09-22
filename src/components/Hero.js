@@ -23,7 +23,7 @@ const Hero = () => {
         <div className={`hero-text ${isVisible ? 'fade-in-up' : ''}`}>
           <h1 className="hero-title">
             안녕하세요, <br />
-            <span className="highlight">{personalInfo.name}</span>입니다
+            <span className="highlight">{personalInfo.name}</span>입니다.
           </h1>
           <p className="hero-subtitle">{personalInfo.title}</p>
           <p className="hero-description">{personalInfo.bio}</p>

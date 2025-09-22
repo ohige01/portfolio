@@ -79,7 +79,6 @@ const Contact = () => {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Contact</h2>
-          <p className="section-subtitle">언제든지 연락주세요. 함께 멋진 프로젝트를 만들어봐요!</p>
         </div>
         
         <div className="contact-content">

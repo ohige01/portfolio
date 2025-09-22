@@ -80,7 +80,7 @@ const About = () => {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">개발자로서의 여정</h2>
-          <p className="section-description">프로젝트를 클릭하시면 자세한 내용을 볼 수 있습니다</p>
+          <p className="section-description">프로젝트를 클릭하시면 자세한 내용을 볼 수 있습니다.</p>
         </div>
         
         <div className="experience-content">

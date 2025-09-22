@@ -33,7 +33,7 @@ const Skills = () => {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Skills</h2>
-          <p className="section-subtitle">제가 사용할 수 있는 기술들입니다</p>
+          <p className="section-subtitle">제가 사용할 수 있는 기술들입니다.</p>
         </div>
         
         <div className="skills-content">
