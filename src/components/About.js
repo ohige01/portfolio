@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Target, BookOpen, ArrowRight, Github, ExternalLink, Tag, X, User, CheckCircle, AlertTriangle, Heart, Play, Eye } from 'lucide-react';
+import { Calendar, BookOpen, Github, ExternalLink, Tag, X, User, CheckCircle, AlertTriangle, Heart, Play, Eye } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import '../styles/About.css';
 
@@ -123,7 +123,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* 가치관과 목표 */}
+          {/* 가치관과 목표
           <div className="values-goals">
             <div className="values-section">
               <h3 className="section-subtitle">
@@ -154,7 +154,7 @@ const About = () => {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -245,15 +245,17 @@ const About = () => {
 
                     {/* 프로젝트 액션 영역 */}
                     <div className="project-links">
-                      <a
-                        href={selectedProject.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn"
-                      >
-                        <Github size={18} />
-                        GitHub
-                      </a>
+                      {selectedProject.github && (
+                        <a
+                          href={selectedProject.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn"
+                        >
+                          <Github size={18} />
+                          GitHub
+                        </a>
+                      )}
                       {selectedProject.youtube ? (
                         <a
                           href={selectedProject.youtube}
@@ -401,12 +403,6 @@ const About = () => {
                   e.target.src = selectedProject.image;
                 }}
               />
-              {selectedProject.gallery && selectedProject.gallery[selectedImageIndex] && (
-                <div className="image-info">
-                  <h4 className="image-title">{selectedProject.gallery[selectedImageIndex].title}</h4>
-                  <p className="image-description">{selectedProject.gallery[selectedImageIndex].description}</p>
-                </div>
-              )}
             </div>
           </div>
         </div>

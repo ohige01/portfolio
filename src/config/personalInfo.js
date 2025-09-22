@@ -5,16 +5,22 @@ export const personalInfo = {
   phone: "(+82) 010-5034-8988",
   location: "서울, 대한민국",
   github: "https://github.com/ohige01",
-  bio: "범용성 높은 개발자가 되기 위해 노력하는 백엔드 개발자입니다. 새로운 환경이나 문화에 유연하게 적응하며, 낯선 도전을 극복하고 숙력될 때 보람을 느낍니다.",
-  profileImage: "/images/profile.jpg", // 프로필 이미지 경로 추가
+  bio: "범용성 높은 개발자가 되기 위해 노력하는 백엔드 개발자입니다.\n 새로운 기술과 다양한 경험에 끊임없이 도전하며 성장합니다.\n 단조로운 업무에 안주하지 않고, 고객 중심의 기술 혁신을 추구하며, 새로운 도전을 통해 지속적으로 성장하는 개발자가 되겠습니다.",
+  profileImage: "/images/profile.jpg",
   
   experience: {
     timeline: [
       {
+        period: "2025.07 - 2025.08",
+        title: "HDMedi 건강 상담 서비스",
+        description: "AI 기반 건강 상담 서비스",
+        technologies: ["Spring Boot", "React", "GeminiOCR", "GCP"]
+      },
+      {
         period: "2025.04 - 2025.06",
         title: "PopFri - 나만의 팝콘 친구",
         description: "AI 기반 사용자 맞춤 영화 추천 서비스 개발",
-        technologies: ["Spring Boot", "React", "MySQL", "Kafka", "Fluentd"]
+        technologies: ["Spring Boot", "React", "MySQL", "Kafka", "Fluentd", "KTCloud"]
       },
       {
         period: "2024.12 - 2025.02",
@@ -31,23 +37,28 @@ export const personalInfo = {
     ],
     values: [
       {
-        title: "지속적 학습",
-        description: "빠르게 변화하는 기술 트렌드에 맞춰 꾸준히 학습하고 성장합니다"
+        title: "기술 혁신 추구",
+        description: "AI, 클라우드, 데이터 분석 등 최신 기술을 활용해 실질적인 문제를 해결합니다"
       },
       {
-        title: "문제 해결",
-        description: "복잡한 문제를 단순하고 효율적인 방법으로 해결하는 것을 추구합니다"
+        title: "사용자 중심 개발",
+        description: "복잡한 기술을 사용자 친화적인 서비스로 구현하여 실제 가치를 창출합니다"
       },
       {
-        title: "협업과 소통",
-        description: "팀원들과의 원활한 소통을 통해 더 나은 결과를 만들어갑니다"
+        title: "전체적 사고",
+        description: "기획부터 배포까지 전 과정을 이해하고 최적의 솔루션을 설계합니다"
+      },
+      {
+        title: "지속적 개선",
+        description: "현업 경험과 피드백을 바탕으로 서비스를 지속적으로 발전시킵니다"
       }
     ],
     goals: [
-      "확장 가능한 서버 아키텍처 설계 역량 향상",
-      "대용량 트래픽 처리 경험 쌓기",
-      "오픈소스 프로젝트 기여",
-      "기술 블로그 운영을 통한 지식 공유"
+      "마이크로서비스 아키텍처와 대규모 시스템 설계 경험 확장",
+      "AI/ML 기술을 활용한 지능형 서비스 개발 역량 강화",
+      "DevOps 및 클라우드 인프라 자동화 전문성 확보",
+      "기술 리더십과 팀 성장을 이끄는 시니어 개발자로 발전",
+      "오픈소스 기여와 기술 커뮤니티 활동을 통한 지식 생태계 참여"
     ]
   },
   
@@ -80,6 +91,76 @@ export const personalInfo = {
   projects: [
     {
       id: 1,
+      title: "HDMedi 건강 상담 서비스",
+      description: "AI 기반 건강 상담 서비스",
+      period: "2025.07 - 2025.08",
+      role: "프론트엔드 개발, 백엔드 연동 및 개선",
+      technologies: ["Spring Boot", "React", "GeminiOCR", "GCP"],
+      details: {
+        overview: 
+          "HDMedi 인턴 활동 중 진행한 프로젝트로, 사용자의 병력, 약력 등의 의료정보를 토대로 사용자의 질문에 대답하는 AI 서비스입니다.",  
+        features: [
+          "처방전/약봉투 자동 입력",
+          "RAG를 활용한 의료 정보 질의",
+          "모바일 대응 반응형 설계"
+        ],
+        challenges: [
+          "레거시 코드 존재, API 문서화 부족",
+          "의료데이터 최신화 미흡",
+          "OCR 성능 저하"
+        ],
+        improvements: [
+          "AI Agent를 통한 API 분석",
+          "공공데이터를 통한 의료데이터 최신화",
+          "OCR 모델 변경 및 프롬프트 개선"
+        ],
+        parts: [
+          {
+            category: "기획 및 설계",
+            items: ["ERD 설계"]
+          },
+          {
+            category: "백엔드 개발",
+            items: ["OCR 서비스 개선", "기존 서비스 분석"]
+          },
+          {
+            category: "프론트엔드 개발",
+            items: ["환자용 웹 페이지 구현", "API 연동"]
+          }
+        ],
+        reflection: 
+        "현업에서 프로젝트를 진행하기 위해 어떤 노력을 쏟아야 하는지 알 수 있었습니다.\n" +
+        "정확한 목표를 세우기 위해 OKR을 수립하고, 진행상황을 공유하기 위해 매일 스크럼을 진행했습니다. 또한, 실제 업무에서 자주 사용하는 Slack과 Jira를 사용하며, 현업에서의 의사소통 또한 경험할 수 있었습니다.\n\n" +
+        "레거시 코드를 분석하며, 코드 이해도를 높일 수 있었습니다.\n" +
+        "기존 서비스를 개선하고, 연동하기 위해 코드를 분석해야 했습니다. 이 과정을 통해 데이터 흐름에 대해 이해할 수 있었고, 타인이 작성한 코드를 분석해보는 업무를 수행했습니다."
+      },
+      github: null,
+      demo: "https://chat.hdmedi.kr",
+      youtube: null,
+      image: "/images/hdmedi.png",
+      gallery: [
+        {
+          id: 1,
+          image: "/images/hdmedi.png",
+          title: "썸네일",
+          description: "hdmedi 상담 서비스 메인 화면"
+        },
+        {
+          id: 2,
+          image: "/images/hdmedi_service.png",
+          title: "서비스 화면",
+          description: "로그인 시 접속 화면"
+        },
+        {
+          id: 3,
+          image: "/images/hdmedi_ocr.png",
+          title: "OCR 결과 화면",
+          description: "처방전/약봉투 인식 결과 화면"
+        }
+      ]
+    },
+    {
+      id: 2,
       title: "PopFri - 나만의 팝콘 친구",
       description: "AI 기반 사용자 맞춤 영화 추천 서비스",
       period: "2025.04 - 2025.06",
@@ -91,8 +172,7 @@ export const personalInfo = {
           "코로나 시기 이후, OTT 시장이 활성화되면서 굉장히 많은 영상 컨텐츠들을 접할 수 있게 되었지만, 과도한 컨텐츠 양으로 오히려 어떤 컨텐츠를 소비할 지 결정하기 어려워졌습니다. 이러한 상황 속에서 사용자 성향에 맞는 영상 컨텐츠를 추천해주는 서비스가 필요하다고 생각해 프로젝트를 제작하였습니다.",
         features: [
           "사용자 선호도 기반 영화 추천 알고리즘",
-          "실시간 평점 및 리뷰 시스템",
-          "Kafka를 활용한 이벤트 스트리밍 처리",
+          "다양한 상황에 대응하는 AI 추천",
           "Fluentd를 통한 로그 수집 및 분석"
         ],
         challenges: [
@@ -107,15 +187,15 @@ export const personalInfo = {
         parts: [
           {
             category: "기획 및 설계",
-            items: ["기획 및 디자인", "데이터베이스 설계", "시스템 아키텍처 설계"]
+            items: ["기획 및 디자인", "ERD 설계", "API 설계", "시스템 아키텍처 설계"]
           },
           {
             category: "백엔드 개발",
-            items: ["백엔드 API 개발", "추천 알고리즘 개발", "로그 수집 시스템 구축"]
+            items: ["로그 수집 시스템 구축", "소셜 로그인(OAuth2) 구현", "영화 탐색, 마이 페이지, 관리 프로세스 생성/조회/관리 api 구현", "서버 배포/관리" ]
           },
           {
             category: "프론트엔드 개발",
-            items: ["프론트엔드 개발", "UI/UX 설계"]
+            items: ["영화 탐색, 마이 페이지 구현", "관리자 페이지 구현"]
           }
         ],
         reflection: 
@@ -123,7 +203,7 @@ export const personalInfo = {
         "현직자에게 직접 서비스에 대한 피드백을 받아 사용자가 편하고 오래 이용할 수 있는 서비스가 되려면 어떤 노력을 기울여야 하는지 알 수 있었습니다.\n" +
         "특히, 영화 추천을 위해 사용자가 용납할 수 있는 시간이 어느 정도인지 고민하며, 로직 실행 시간을 줄이기위해 병렬 처리와 캐싱을 도입했던 것이 기억에 남습니다."
       },
-      github: "https://github.com/ohige01/popfri",
+      github: "https://github.com/PopFri",
       demo: null,
       youtube: "https://youtu.be/N0tc_PW0Ng8",
       image: "/images/popfri.png",
@@ -136,70 +216,64 @@ export const personalInfo = {
         },
         {
           id: 2,
-          image: "/images/popfri-wireframe.png",
+          image: "/images/popfri_wireframe.png",
           title: "와이어프레임",
           description: "피그마로 제작한 popfri 와이어프레임"
         },
         {
           id: 3,
-          image: "/images/popfri-recommend.png",
-          title: "추천 시스템",
-          description: "AI 기반 개인화 추천 알고리즘 화면"
+          image: "/images/popfri_erd_1.png",
+          title: "서비스 페이지 ERD",
+          description: "popfri 서비스 페이지 ERD"
         },
         {
           id: 4,
-          image: "/images/popfri-analytics.png",
-          title: "로그 분석",
-          description: "Kafka와 Fluentd를 활용한 실시간 로그 분석 대시보드"
+          image: "/images/popfri_erd_2.png",
+          title: "관리자 페이지 ERD",
+          description: "popfri 관리자 페이지 ERD"
         }
       ]
     },
     {
-      id: 2,
+      id: 3,
       title: "이거먹자 - 건강한 삶을 위한 맞춤형 솔루션",
       description: "AI 기반 사용자 맞춤 식단 제공 서비스",
       period: "2024.12 - 2025.02",
       role: "백엔드 개발 및 시스템 아키텍처 설계",
       technologies: ["Node.js", "MySQL", "DALL-E 3", "Naver API", "AWS"],
       details: {
-        overview: "사용자의 건강 상태와 선호도를 고려한 맞춤형 식단을 제공하고, AI로 생성된 음식 이미지를 통해 시각적 정보를 제공하는 웹 서비스입니다.",
+        overview: "평소에 자주 던지는 질문 중 하나인 ‘오늘 뭐먹지?’에 대한 고민을 해결해줄 수 있는 프로젝트이고, 인간의 3대 요소 중 하나인 식을 해결하기 위해 AI를 어떻게 활용할 수 있을까하는 궁금증을 갖고 이 프로젝트를 참여하였습니다.",
         features: [
           "개인 건강 정보 기반 맞춤 식단 추천",
           "DALL-E 3를 활용한 음식 이미지 생성",
           "Naver API를 통한 식재료 정보 연동",
-          "영양소 분석 및 칼로리 계산"
+          "KAMIS 데이터를 통한 식제료 시세 제공"
         ],
         challenges: [
-          "OpenAI API 호출 비용 최적화",
+          "이미지 동시 생성 개수 제한",
           "외부 API 연동 시 발생하는 지연 시간 처리",
-          "다양한 식단 데이터의 정규화 및 관리"
+          "인적 자원, 프로젝트 일정 관리"
         ],
         improvements: [
-          "API 캐싱 시스템 구축으로 중복 호출 50% 감소",
-          "비동기 처리를 통한 사용자 경험 개선",
-          "AWS 서비스를 활용한 안정적인 인프라 구축"
+          "Promise를 통한 동시성 제어",
+          "이미지 캐싱을 통한 처리 속도 개선",
+          "업무 일정 문서화, 명확한 업무 지정"
         ],
         parts: [
           {
             category: "기획 및 설계",
-            items: ["기획 및 요구사항 분석", "데이터베이스 설계"]
+            items: ["ERD 설계", "API 설계"]
           },
           {
             category: "백엔드 개발",
-            items: ["백엔드 API 개발", "AI 모델 통합", "외부 API 연동"]
-          },
-          {
-            category: "프론트엔드 개발",
-            items: ["프론트엔드 개발"]
-          },
-          {
-            category: "인프라 및 배포",
-            items: ["AWS 인프라 구축"]
+            items: ["서버 배포 및 관리", "CI/CD 구축", "식단 이미지 생성, 배송지, 유저 구독 내역, 식재료 관련 API 구현", "외부 API(Naver Shopping, KAMIS) 연동"]
           }
         ],
-        reflection: "AI API를 실제 서비스에 통합하는 첫 경험이었습니다. 외부 API 의존성 관리와 비용 최적화의 중요성을 배웠고, 사용자 중심의 서비스 설계에 대해 많이 고민하게 된 프로젝트였습니다."
+        reflection: "이번 프로젝트에서 주로 힘겨움을 느꼈던 것은 프로젝트 내부보다는 프로젝트 외부적인 요소였습니다.\n" + 
+        "팀원들마다 진행하는 방식이 상이하고 저 또한 제게 부여된 과업들을 처리하는 방식이 달라 그 사이에 간극들을 줄이는 것이 굉장히 중요하다는 것을 느꼈습니다. 또한 인적 자원을 관리하고 팀원들과 지속적으로 소통하는 법 등 커뮤니케이션 능력을 키울 수 있었습니다.\n\n" + 
+        "많은 고난들이 있었지만, 결과적으로 80여개 팀들 사이에서 대상을 수상하는 성과를 이뤄 제게 뜻깊은 프로젝트가 되었습니다."
       },
-      github: "https://github.com/ohige01/eat-this",
+      github: "https://github.com/ohige01/eatthis",
       demo: null,
       youtube: "https://youtu.be/MCwqymBcdvs",
       image: "/images/eatthis.png",
@@ -212,64 +286,54 @@ export const personalInfo = {
         },
         {
           id: 2,
-          image: "/images/eatthis-menu.png",
-          title: "식단 추천",
-          description: "AI 기반 사용자 맞춤 식단 추천 화면"
+          image: "/images/eatthis_erd.png",
+          title: "이거먹자 ERD",
+          description: "이거먹자 ERD"
         },
         {
           id: 3,
-          image: "/images/eatthis-nutrition.png",
-          title: "영양소 분석",
-          description: "식단별 영양소 분석 및 칼로리 계산 화면"
-        },
-        {
-          id: 4,
-          image: "/images/eatthis-ai.png",
-          title: "AI 이미지 생성",
-          description: "DALL-E 3를 활용한 음식 이미지 생성 결과"
+          image: "/images/eatthis_api.png",
+          title: "이거먹자 API 목록",
+          description: "이거먹자 API 목록"
         }
       ]
     },
     {
-      id: 3,
+      id: 4,
       title: "Cardify - 지능적인 플래시 카드 학습 서비스",
       description: "플래시 카드 학습 기반 노트 에디터",
       period: "2024.07 - 2024.08",
       role: "백엔드 개발 및 데이터베이스 설계",
       technologies: ["Spring Boot", "MySQL", "Java", "JPA"],
       details: {
-        overview: "효율적인 학습을 위한 플래시 카드 시스템과 노트 에디터를 결합한 학습 플랫폼입니다. 간격 반복 알고리즘을 적용하여 학습 효과를 극대화했습니다.",
+        overview: "학기 중에 배우는 과목들을 정리하기 위해 노트 프로그램을 많이 사용하는데, 제가 자주 사용하는 프로그램을 직접 만들어볼 수 있다는 것에 매력을 느껴 프로젝트에 참여했습니다.",
         features: [
-          "드래그 앤 드롭 기반 카드 편집기",
-          "간격 반복 학습 알고리즘 적용",
+          "지능적인 플래시 카드 학습",
+          "툴바를 사용한 간편한 노트 작성",
           "학습 통계 및 진도 추적",
-          "카테고리별 카드 분류 시스템"
+          "난이도 입력 기반 학습 알고리즘"
         ],
         challenges: [
-          "복잡한 학습 알고리즘의 데이터베이스 설계",
-          "사용자 학습 패턴 분석 및 최적화",
-          "직관적인 카드 편집 인터페이스 구현"
+          "복잡한 ERD 설계",
+          "노트에디터 객체 입력 효율성 저하",
+          "첫 협업 경험"
         ],
         improvements: [
-          "JPA를 활용한 효율적인 데이터 모델링",
-          "학습 통계 집계 쿼리 최적화",
-          "메모리 사용량 최적화로 성능 개선"
+          "도메인 및 서비스 분석을 통한 ERD 설계",
+          "MongoDB와 MySQL 저장 시간 비교",
+          "깃 플로우 방식을 통한 협업"
         ],
         parts: [
           {
             category: "기획 및 설계",
-            items: ["기획 및 요구사항 분석", "데이터베이스 설계", "학습 알고리즘 설계"]
+            items: ["ERD 설계"]
           },
           {
             category: "백엔드 개발",
             items: ["백엔드 API 개발", "JPA 모델링"]
-          },
-          {
-            category: "프론트엔드 개발",
-            items: ["프론트엔드 개발"]
           }
         ],
-        reflection: "학습 도메인에 대한 깊은 이해가 필요한 프로젝트였습니다. 사용자의 학습 패턴을 데이터로 분석하고, 이를 바탕으로 개인화된 학습 경험을 제공하는 과정에서 도메인 지식의 중요성을 깨달았습니다."
+        reflection: "처음 서버 개발을 하며, 클라이언트와 서버의 관계에 대해 표면적으로만 알고 있었던 개념들을 직접 느끼며 이해할 수 있었습니다.\n\n동작의 효율성에 대해 많은 부분을 따져볼 수 없는 프론트와 달리 서버에는 AWS, Docker 등 여러 기술들을 어떻게 조합하는 지에 따라 많은 부분이 달라질 수 있음을 배웠습니다. 이러한 경험은 앞으로 제가 어떤 기술을 공부해야 하는지 알 수 있었습니다.\n\n팀원들과 협업은 깃 플로우 방식을 사용하였습니다. 협업을 특정 방식에 맞춰 진행하는 것은 처음이었습니다. 때문에 많은 부분이 서툴고 어색했는데, 시간이 지날수록 협업 방식이 정형화되어 있는 것이 작업 시간을 줄이고 작업 내용에 대해 이해하기 쉬워진다는 것을 깨달았습니다. 이러한 경험은 협업 방식이 정형화되고 프로세스가 정형화되었을 때의 이점을 다시 한번 생각해볼 수 있었습니다."
       },
       github: "https://github.com/ohige01/cardify",
       demo: null,
@@ -284,21 +348,9 @@ export const personalInfo = {
         },
         {
           id: 2,
-          image: "/images/cardify-editor.png",
-          title: "카드 에디터",
-          description: "드래그 앤 드롭 기반 플래시 카드 편집 화면"
-        },
-        {
-          id: 3,
-          image: "/images/cardify-study.png",
-          title: "학습 모드",
-          description: "간격 반복 알고리즘이 적용된 학습 화면"
-        },
-        {
-          id: 4,
-          image: "/images/cardify-stats.png",
-          title: "학습 통계",
-          description: "개인 학습 패턴 분석 및 진도 추적 화면"
+          image: "/images/cardify_erd.png",
+          title: "cardify erd",
+          description: "cardify erd"
         }
       ]
     }

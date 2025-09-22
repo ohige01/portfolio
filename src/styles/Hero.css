@@ -56,6 +56,7 @@
   color: var(--text-muted);
   margin-bottom: var(--spacing-lg);
   line-height: 1.6;
+  white-space: pre-line;
 }
 
 .hero-info {
