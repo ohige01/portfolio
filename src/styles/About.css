@@ -1,24 +1,28 @@
-/* About 섹션 기본 스타일 */
+/* ============================================================================
+   ABOUT SECTION - 전체 레이아웃
+   ============================================================================ */
+
 .about {
   background-color: var(--bg-secondary);
 }
 
+/* 섹션 헤더 */
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
 }
 
 .section-title {
   font-size: var(--font-size-3xl);
   color: var(--text-primary);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
   position: relative;
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
@@ -30,48 +34,85 @@
 .section-description {
   color: var(--text-muted);
   font-size: var(--font-size-base);
-  margin-top: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  line-height: 1.6;
 }
 
+/* 섹션 서브 타이틀 (공통 스타일) */
 .section-subtitle {
-  color: var(--text-muted);
-  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
 }
 
-.experience-content {
+/* ============================================================================
+   레이아웃 - 상단/하단 섹션 구조
+   ============================================================================ */
+
+/* 상단 섹션: 타임라인(55%) + 트러블슈팅(45%) */
+.top-section {
   display: grid;
+  grid-template-columns: 55fr 45fr;
   gap: var(--spacing-2xl);
+  align-items: start;
+  margin-bottom: 5rem;
 }
 
-/* 타임라인 스타일 */
+/* 하단 섹션: 교외활동(50%) + 수상내역(50%) */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  padding-top: 5rem;
+  border-top: 2px solid var(--border);
+}
+
+/* ============================================================================
+   공통 카드 스타일 (Base Card)
+   ============================================================================ */
+
+.timeline-content,
+.troubleshooting-card,
+.activity-card,
+.award-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: var(--transition-medium);
+}
+
+.timeline-content:hover,
+.troubleshooting-card:hover,
+.activity-card:hover,
+.award-card:hover {
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================================================
+   타임라인 섹션
+   ============================================================================ */
+
 .timeline-section {
-  margin-bottom: var(--spacing-2xl);
+  position: relative;
 }
 
 .timeline {
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 30px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--text-primary), var(--text-muted));
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: var(--spacing-xl);
-  padding-left: 80px;
+  padding-left: 0;
 }
 
 /* 클릭 가능한 타임라인 아이템 */
@@ -82,48 +123,29 @@
 .timeline-item.clickable:hover .timeline-content {
   border-color: var(--text-primary);
   transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-.timeline-dot {
-  position: absolute;
-  left: 22px;
-  top: 8px;
-  width: 16px;
-  height: 16px;
-  background-color: var(--text-primary);
-  border: 3px solid var(--bg-secondary);
-  border-radius: 50%;
-  z-index: 1;
-}
 
-.timeline-content {
-  background-color: var(--bg-primary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  transition: var(--transition-medium);
-}
-
-.timeline-content:hover {
-  border-color: var(--text-muted);
-  transform: translateY(-2px);
-}
-
+/* 타임라인 카드 내용 */
 .timeline-period {
   color: var(--text-primary);
   font-size: var(--font-size-sm);
   font-weight: 600;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
 }
 
 .timeline-title {
   color: var(--text-primary);
   font-size: var(--font-size-lg);
+  font-weight: 600;
   margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
 }
 
 .timeline-description {
   color: var(--text-secondary);
+  font-size: var(--font-size-base);
   line-height: 1.6;
   margin-bottom: var(--spacing-md);
 }
@@ -137,7 +159,7 @@
 
 .tech-badge {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 4px 10px;
   background-color: var(--bg-secondary);
   color: var(--text-secondary);
   border: 1px solid var(--border);
@@ -164,25 +186,348 @@
   opacity: 1;
 }
 
-/* 모바일 반응형 */
+/* ============================================================================
+   트러블슈팅 섹션
+   ============================================================================ */
+
+.troubleshooting-section {
+  position: relative;
+}
+
+.troubleshooting-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+
+/* 트러블슈팅 카드 - 컴팩트 디자인 */
+.troubleshooting-card {
+  padding: var(--spacing-md);
+}
+
+.troubleshooting-header {
+  margin-bottom: var(--spacing-sm);
+}
+
+.project-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+  color: var(--text-primary);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+/* 트러블슈팅 컨텐츠 */
+.troubleshooting-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Issue 섹션 */
+.issue-section {
+  padding: var(--spacing-sm);
+  background-color: rgba(239, 68, 68, 0.05);
+  border-left: 3px solid rgba(239, 68, 68, 0.6);
+  border-radius: var(--radius-sm);
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.issue-section .section-label {
+  color: #ef4444;
+}
+
+.issue-text {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Solution 섹션 */
+.solution-section {
+  padding: var(--spacing-sm);
+  background-color: rgba(34, 197, 94, 0.05);
+  border-left: 3px solid rgba(34, 197, 94, 0.6);
+  border-radius: var(--radius-sm);
+}
+
+.solution-section .section-label {
+  color: #22c55e;
+}
+
+.solution-text {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================================================
+   교외 활동 섹션
+   ============================================================================ */
+
+.activities-section {
+  position: relative;
+}
+
+.activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* 활동 카드 헤더 */
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.activity-period {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.activity-type {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.activity-type.type-인턴 {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.activity-type.type-교육 {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.activity-type.type-활동 {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.activity-type.type-동아리 {
+  background-color: rgba(168, 85, 247, 0.1);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.activity-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.activity-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ============================================================================
+   수상내역 섹션
+   ============================================================================ */
+
+.awards-section {
+  position: relative;
+}
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* 수상 카드 - 좌측 강조 테두리 */
+.award-card {
+  border-left: 3px solid var(--text-primary);
+}
+
+.award-card:hover {
+  border-left-color: #fbbf24;
+}
+
+/* 수상 카드 헤더 */
+.award-header {
+  margin-bottom: var(--spacing-sm);
+}
+
+.award-date {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.award-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.award-organizer {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+.award-project {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+  padding: 4px 10px;
+  background-color: var(--bg-secondary);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+}
+
+/* ============================================================================
+   반응형 디자인
+   ============================================================================ */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+  /* 상단 섹션 세로 배치 */
+  .top-section {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+  }
+
+  /* 하단 섹션 세로 배치 */
+  .bottom-section {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3xl);
+    padding-top: var(--spacing-3xl);
+  }
+
+  /* 트러블슈팅 스크롤 제거 */
+  .troubleshooting-list {
+    max-height: none;
+  }
+
+  .troubleshooting-section {
+    margin-top: 0;
+  }
+
+  /* 타임라인 중앙 정렬 */
+  .timeline {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* 모바일 (768px 이하) */
 @media (max-width: 768px) {
-  .timeline::before {
-    left: 20px;
+  /* 섹션 헤더 */
+  .section-header {
+    margin-bottom: var(--spacing-2xl);
   }
 
+  .section-subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  /* 상하단 섹션 간격 */
+  .top-section {
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .bottom-section {
+    gap: var(--spacing-2xl);
+    padding-top: var(--spacing-2xl);
+  }
+
+  /* 타임라인 조정 */
   .timeline-item {
-    padding-left: 60px;
+    padding-left: 0;
   }
 
-  .timeline-dot {
-    left: 12px;
+  /* 카드 간격 조정 */
+  .timeline,
+  .troubleshooting-list,
+  .activities-list,
+  .awards-list {
+    gap: var(--spacing-lg);
   }
 
-  .timeline-content {
+  /* 카드 패딩 조정 */
+  .timeline-content,
+  .troubleshooting-card,
+  .activity-card,
+  .award-card {
     padding: var(--spacing-md);
   }
 
-  .timeline-title {
+  /* Issue/Solution 섹션 */
+  .issue-section,
+  .solution-section {
+    padding: var(--spacing-sm);
+  }
+
+  /* 타이틀 크기 조정 */
+  .timeline-title,
+  .activity-title,
+  .award-title {
     font-size: var(--font-size-base);
+  }
+
+  /* 활동 헤더 세로 배치 */
+  .activity-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* 초소형 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .timeline-content,
+  .troubleshooting-card,
+  .activity-card,
+  .award-card {
+    padding: var(--spacing-sm);
   }
 }
