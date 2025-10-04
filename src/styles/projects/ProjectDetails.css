@@ -1,0 +1,233 @@
+/* 프로젝트 상세 스크롤 컨텐츠 */
+.modal-scroll-content {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* 컨텐츠 섹션 공통 스타일 */
+.content-section {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.content-section .section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+}
+
+.section-icon {
+  color: var(--text-primary);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.content-section h4 {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+/* 프로젝트 개요 섹션 */
+.overview-section {
+  background-color: var(--bg-secondary);
+}
+
+.overview-text {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: var(--font-size-base);
+  white-space: pre-wrap;
+}
+
+/* 주요 기능 섹션 */
+.features-section {
+  background-color: var(--bg-secondary);
+}
+
+.feature-grid {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.feature-item::before {
+  content: "▪";
+  color: var(--text-primary);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 제작파트 섹션 */
+.parts-section {
+  background-color: var(--bg-secondary);
+}
+
+.parts-categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.parts-category {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.category-header {
+  margin-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid var(--border);
+}
+
+.category-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin: 0;
+}
+
+.category-items {
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.part-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: var(--spacing-sm);
+}
+
+.part-item::before {
+  content: "▪";
+  color: var(--text-primary);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 도전과 해결 섹션 */
+.challenges-section {
+  background-color: var(--bg-secondary);
+}
+
+.challenges-solutions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+.column-header h5 {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: var(--font-size-base);
+}
+
+.challenge-list,
+.improvement-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.challenge-item,
+.improvement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.item-number {
+  color: var(--text-primary);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background-color: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 프로젝트 소감 섹션 */
+.reflection-section {
+  background-color: var(--bg-secondary);
+}
+
+.reflection-quote {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+.quote-content {
+  flex: 1;
+}
+
+.quote-content p {
+  margin: 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: var(--font-size-base);
+  padding-left: var(--spacing-md);
+  border-left: 3px solid var(--text-primary);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .modal-scroll-content {
+    padding: var(--spacing-md);
+    gap: var(--spacing-lg);
+  }
+
+  .content-section {
+    padding: var(--spacing-md);
+  }
+
+  .challenges-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .quote-content p {
+    font-size: var(--font-size-sm);
+  }
+}

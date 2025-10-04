@@ -1,0 +1,136 @@
+/* 프로젝트 모달 스타일 */
+.project-modal {
+  max-width: 1200px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--bg-secondary);
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--bg-secondary);
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* 모달 헤더 */
+.modal-header {
+  display: flex;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-secondary);
+}
+
+/* 프로젝트 컨텐츠 섹션 */
+.project-content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* 프로젝트 기본 정보 */
+.project-title {
+  font-size: var(--font-size-2xl);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.project-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.project-meta {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* 기술 스택 */
+.project-tech {
+  margin-bottom: var(--spacing-md);
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  transition: var(--transition-fast);
+}
+
+.tech-tag:hover {
+  border-color: var(--text-muted);
+  color: var(--text-primary);
+}
+
+/* 프로젝트 링크 버튼 */
+.project-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-start;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .modal-header {
+    flex-direction: column;
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .project-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .project-meta {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .project-links {
+    flex-wrap: wrap;
+  }
+}

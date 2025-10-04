@@ -1,0 +1,24 @@
+/* 카드 기본 스타일 */
+.card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: var(--transition-medium);
+}
+
+/* 호버 가능한 카드 */
+.card-hoverable:hover {
+  border-color: var(--text-muted);
+  box-shadow: 0 8px 32px var(--shadow);
+  transform: translateY(-4px);
+}
+
+/* 클릭 가능한 카드 */
+.card-clickable {
+  cursor: pointer;
+}
+
+.card-clickable:active {
+  transform: translateY(-2px);
+}
