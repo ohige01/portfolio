@@ -133,57 +133,92 @@
   background-color: var(--bg-secondary);
 }
 
-.challenges-solutions-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.challenges-solutions-list {
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-xl);
 }
 
-.column-header {
+.challenge-solution-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.challenge-block,
+.solution-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.block-header {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
+  padding-bottom: var(--spacing-xs);
   border-bottom: 1px solid var(--border);
 }
 
-.column-header h5 {
+.block-header h5 {
   color: var(--text-primary);
   margin: 0;
   font-size: var(--font-size-base);
-}
-
-.challenge-list,
-.improvement-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.challenge-item,
-.improvement-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-sm);
-  color: var(--text-secondary);
-  line-height: 1.6;
+  font-weight: 600;
 }
 
 .item-number {
   color: var(--text-primary);
-  width: 20px;
-  height: 20px;
+  min-width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background-color: var(--bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   flex-shrink: 0;
-  margin-top: 2px;
+}
+
+.challenge-header .item-number {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.solution-header .item-number {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+}
+
+.block-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding-top: var(--spacing-xs);
+}
+
+.block-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.block-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin: 0;
+  line-height: 1.7;
+  white-space: pre-wrap;
 }
 
 /* 프로젝트 소감 섹션 */
@@ -222,9 +257,18 @@
     padding: var(--spacing-md);
   }
 
-  .challenges-solutions-grid {
+  .challenge-solution-pair {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+  }
+
+  .block-title {
+    font-size: var(--font-size-sm);
+  }
+
+  .block-description {
+    font-size: 13px;
   }
 
   .quote-content p {

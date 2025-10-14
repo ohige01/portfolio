@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Briefcase, Trophy, Lightbulb, AlertCircle, CheckCircle } from 'lucide-react';
+import { Calendar, Briefcase, Trophy } from 'lucide-react';
 import { personalInfo } from '../config/personalInfo';
 import ProjectModal from './projects/ProjectModal';
 import '../styles/About.css';
@@ -52,9 +52,8 @@ const About = () => {
           <p className="section-description">프로젝트를 클릭하시면 자세한 내용을 볼 수 있습니다.</p>
         </div>
 
-        {/* 상단: 타임라인 + 트러블슈팅 */}
+        {/* 상단: 타임라인 */}
         <div className="top-section">
-          {/* 좌측: 타임라인 섹션 (55%) */}
           <div className="timeline-section">
             <h3 className="section-subtitle">
               <Calendar size={20} />
@@ -90,39 +89,6 @@ const About = () => {
                   </div>
                 );
               })}
-            </div>
-          </div>
-
-          {/* 우측: 트러블슈팅 섹션 (45%) */}
-          <div className="troubleshooting-section">
-            <h3 className="section-subtitle">
-              <Lightbulb size={20} />
-              트러블슈팅
-            </h3>
-            <div className="troubleshooting-list">
-              {personalInfo.experience.troubleshooting.map((item, index) => (
-                <div key={index} className="troubleshooting-card">
-                  <div className="troubleshooting-header">
-                    <span className="project-badge">{item.project}</span>
-                  </div>
-                  <div className="troubleshooting-content">
-                    <div className="issue-section">
-                      <div className="section-label">
-                        <AlertCircle size={16} />
-                        <span>Issue</span>
-                      </div>
-                      <p className="issue-text">{item.issue}</p>
-                    </div>
-                    <div className="solution-section">
-                      <div className="section-label">
-                        <CheckCircle size={16} />
-                        <span>Solution</span>
-                      </div>
-                      <p className="solution-text">{item.solution}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

@@ -65,33 +65,31 @@ const ProjectDetails = ({ details }) => {
           <AlertTriangle className="section-icon" />
           <h4>도전과 해결</h4>
         </div>
-        <div className="challenges-solutions-grid">
-          <div className="challenges-column">
-            <div className="column-header">
-              <h5>어려웠던 점</h5>
-            </div>
-            <div className="challenge-list">
-              {details.challenges.map((challenge, index) => (
-                <div key={index} className="challenge-item">
+        <div className="challenges-solutions-list">
+          {details.challenges.map((challenge, index) => (
+            <div key={index} className="challenge-solution-pair">
+              <div className="challenge-block">
+                <div className="block-header challenge-header">
                   <div className="item-number">{index + 1}</div>
-                  <span>{challenge}</span>
+                  <h5>어려웠던 점</h5>
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="solutions-column">
-            <div className="column-header">
-              <h5>해결한 방법</h5>
-            </div>
-            <div className="improvement-list">
-              {details.improvements.map((improvement, index) => (
-                <div key={index} className="improvement-item">
+                <div className="block-content">
+                  <p className="block-title">{challenge.title}</p>
+                  <p className="block-description">{challenge.description}</p>
+                </div>
+              </div>
+              <div className="solution-block">
+                <div className="block-header solution-header">
                   <div className="item-number">{index + 1}</div>
-                  <span>{improvement}</span>
+                  <h5>해결한 방법</h5>
                 </div>
-              ))}
+                <div className="block-content">
+                  <p className="block-title">{details.improvements[index].title}</p>
+                  <p className="block-description">{details.improvements[index].description}</p>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
 
