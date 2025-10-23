@@ -53,18 +53,18 @@ export const personalInfo = {
       {
         period: "2025.07 - 2025.08",
         title: "HDMedi 인턴",
-        description: "건강 상담 서비스 개발 및 레거시 시스템 개선",
+        description: "건강 상담 서비스 개발 및 의료 데이터 최신화",
         type: "인턴"
       },
       {
         period: "2025.04 - 2025.06",
         title: "서경대학교 SW Academy 4기",
-        description: "기업 연계 프로젝트 및 로그 데이터 분석 과정",
+        description: "소프트웨어 개발 역량 강화 및 기업 연계 프로젝트",
         type: "교육"
       },
       {
-        period: "2024.03 - 2024.12",
-        title: "서경대학교 개발 동아리",
+        period: "2023.09 - 2025.02",
+        title: "UMC - 대학생 연합 개발 동아리",
         description: "웹 개발 프로젝트 및 기술 스터디 활동",
         type: "동아리"
       }
@@ -72,15 +72,14 @@ export const personalInfo = {
     awards: [
       {
         date: "2025.02",
-        title: "서경 크리에이티브 해커톤 대상",
-        organizer: "서경대학교",
+        title: "UMC 7th Demo Day 대상",
+        organizer: "University MakeUs Challenge",
         project: "이거먹자"
       },
       {
         date: "2024.12",
-        title: "학과 프로젝트 경진대회 우수상",
-        organizer: "서경대학교 컴퓨터공학과",
-        project: "Cardify"
+        title: "제 6회 서경대학교 프로그래밍 장려상",
+        organizer: "서경대학교 소프트웨어학과"
       }
     ]
   },
@@ -184,22 +183,28 @@ export const personalInfo = {
           id: 1,
           image: "/images/popfri.png",
           title: "썸네일",
-          description: "사용자 맞춤 영화 추천 서비스의 메인 화면"
+          description: "popfri 메인 화면"
         },
         {
           id: 2,
+          image: "/images/popfri_architecture.png",
+          title: "서버 아키텍처",
+          description: "popfri 서버 아키텍처 도식화"
+        },
+        {
+          id: 3,
           image: "/images/popfri_wireframe.png",
           title: "와이어프레임",
           description: "피그마로 제작한 popfri 와이어프레임"
         },
         {
-          id: 3,
+          id: 4,
           image: "/images/popfri_erd_1.png",
           title: "서비스 페이지 ERD",
           description: "popfri 서비스 페이지 ERD"
         },
         {
-          id: 4,
+          id: 5,
           image: "/images/popfri_erd_2.png",
           title: "관리자 페이지 ERD",
           description: "popfri 관리자 페이지 ERD"
