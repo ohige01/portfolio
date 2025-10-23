@@ -11,12 +11,6 @@ export const personalInfo = {
   experience: {
     timeline: [
       {
-        period: "2025.07 - 2025.08",
-        title: "HDMedi 건강 상담 서비스",
-        description: "AI 기반 건강 상담 서비스",
-        technologies: ["Spring Boot", "React", "GeminiOCR", "GCP"]
-      },
-      {
         period: "2025.04 - 2025.06",
         title: "PopFri - 나만의 팝콘 친구",
         description: "AI 기반 사용자 맞춤 영화 추천 서비스 개발",
@@ -120,94 +114,6 @@ export const personalInfo = {
   projects: [
     {
       id: 1,
-      title: "HDMedi 건강 상담 서비스",
-      description: "AI 기반 건강 상담 서비스",
-      period: "2025.07 - 2025.08",
-      role: "프론트엔드 개발, 백엔드 연동 및 개선",
-      technologies: ["Spring Boot", "React", "GeminiOCR", "GCP"],
-      details: {
-        overview: 
-          "HDMedi 인턴 활동 중 진행한 프로젝트로, 사용자의 병력, 약력 등의 의료정보를 토대로 사용자의 질문에 대답하는 AI 서비스입니다.",  
-        features: [
-          "처방전/약봉투 자동 입력",
-          "RAG를 활용한 의료 정보 질의",
-          "모바일 대응 반응형 설계"
-        ],
-        challenges: [
-          {
-            title: "레거시 코드 존재, API 문서화 부족",
-            description: "기존 코드베이스에 대한 문서가 부족하여 코드 이해와 기능 파악에 어려움이 있었습니다. API 명세가 없어 각 엔드포인트의 동작을 직접 분석해야 했습니다."
-          },
-          {
-            title: "의료데이터 최신화 미흡",
-            description: "서비스에 사용되는 의료 정보가 최신 상태로 유지되지 않아, 사용자에게 정확한 정보를 제공하기 어려웠습니다. 데이터 업데이트 프로세스가 체계화되지 않았습니다."
-          },
-          {
-            title: "OCR 성능 저하",
-            description: "처방전과 약봉투 인식 시 정확도가 낮아 사용자가 수동으로 수정해야 하는 경우가 많았습니다. 특히 손글씨나 복잡한 레이아웃에서 인식률이 떨어졌습니다."
-          }
-        ],
-        improvements: [
-          {
-            title: "AI Agent를 통한 API 분석",
-            description: "Claude와 같은 AI 도구를 활용하여 레거시 코드를 체계적으로 분석했습니다. 코드의 흐름과 각 API의 역할을 파악하고 문서화하여 팀원들과 공유했습니다."
-          },
-          {
-            title: "공공데이터를 통한 의료데이터 최신화",
-            description: "식품의약품안전처, 건강보험심사평가원 등의 공공 API를 활용하여 의료 정보를 주기적으로 업데이트하는 시스템을 구축했습니다. 자동화된 데이터 동기화 프로세스를 통해 최신 정보를 유지할 수 있게 되었습니다."
-          },
-          {
-            title: "OCR 모델 변경 및 프롬프트 개선",
-            description: "기존 OCR 모델을 Gemini OCR로 교체하고, 의료 문서 인식에 특화된 프롬프트를 작성했습니다. 이미지 전처리 과정을 추가하여 인식률을 크게 향상시켰습니다."
-          }
-        ],
-        parts: [
-          {
-            category: "기획 및 설계",
-            items: ["ERD 설계"]
-          },
-          {
-            category: "백엔드 개발",
-            items: ["OCR 서비스 개선", "기존 서비스 분석"]
-          },
-          {
-            category: "프론트엔드 개발",
-            items: ["환자용 웹 페이지 구현", "API 연동"]
-          }
-        ],
-        reflection: 
-        "현업에서 프로젝트를 진행하기 위해 어떤 노력을 쏟아야 하는지 알 수 있었습니다.\n" +
-        "정확한 목표를 세우기 위해 OKR을 수립하고, 진행상황을 공유하기 위해 매일 스크럼을 진행했습니다. 또한, 실제 업무에서 자주 사용하는 Slack과 Jira를 사용하며, 현업에서의 의사소통 또한 경험할 수 있었습니다.\n\n" +
-        "레거시 코드를 분석하며, 코드 이해도를 높일 수 있었습니다.\n" +
-        "기존 서비스를 개선하고, 연동하기 위해 코드를 분석해야 했습니다. 이 과정을 통해 데이터 흐름에 대해 이해할 수 있었고, 타인이 작성한 코드를 분석해보는 업무를 수행했습니다."
-      },
-      github: null,
-      demo: "https://chat.hdmedi.kr",
-      youtube: null,
-      image: "/images/hdmedi.png",
-      gallery: [
-        {
-          id: 1,
-          image: "/images/hdmedi.png",
-          title: "썸네일",
-          description: "hdmedi 상담 서비스 메인 화면"
-        },
-        {
-          id: 2,
-          image: "/images/hdmedi_service.png",
-          title: "서비스 화면",
-          description: "로그인 시 접속 화면"
-        },
-        {
-          id: 3,
-          image: "/images/hdmedi_ocr.png",
-          title: "OCR 결과 화면",
-          description: "처방전/약봉투 인식 결과 화면"
-        }
-      ]
-    },
-    {
-      id: 2,
       title: "PopFri - 나만의 팝콘 친구",
       description: "AI 기반 사용자 맞춤 영화 추천 서비스",
       period: "2025.04 - 2025.06",
@@ -301,7 +207,7 @@ export const personalInfo = {
       ]
     },
     {
-      id: 3,
+      id: 2,
       title: "이거먹자 - 건강한 삶을 위한 맞춤형 솔루션",
       description: "AI 기반 사용자 맞춤 식단 제공 서비스",
       period: "2024.12 - 2025.02",
@@ -383,7 +289,7 @@ export const personalInfo = {
       ]
     },
     {
-      id: 4,
+      id: 3,
       title: "Cardify - 지능적인 플래시 카드 학습 서비스",
       description: "플래시 카드 학습 기반 노트 에디터",
       period: "2024.07 - 2024.08",
